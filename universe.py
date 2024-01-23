@@ -1,36 +1,7 @@
 import os
-'''
-folder_path = "./SparkUniverse/save"
-file_names = os.listdir(folder_path)
-
-if len(file_names) == 0:
-    print("创建一个新的游戏,输入新游戏的名称:")
-    #print("command001")
-    file_name = input()
-    print("这一局游戏内你希望被称为:")
-    #print("command002")
-    user_name = input()
-    print("这一局游戏内你希望你领导的的团体被称为:")
-    #print("command003")
-    file_name = input()
-    print("这一局游戏内你希望被称为:")
-    user_name = input()
-    print("这一局游戏内你希望你领导的的团体被称为:")
-    company_name = input()
-
-    file_path = os.path.join(folder_path, file_name)
-    with open(file_path, 'w') as file:
-        file.write(user_name + '\n')
-        file.write(company_name + '\n')
-
-else:
-    print(file_names)
-'''
 
 #定义全局参数
 file_name = ''
-user_name = ''
-company_name = ''
 game_switch = False
 folder_path = "./SparkUniverse/save"
 file_names = os.listdir(folder_path)
@@ -51,17 +22,13 @@ while game_switch == False :
                         file_path = os.path.join(folder_path, file_name)
                         with open(file_path, 'w') as file:
                             file.write(user_name + '\n')
-                            file.write(company_name + '\n')
+                            #file.write(company_name + '\n')
                     print("echo-1001")#echo-1001:游戏开始
                 else:
                     print("echo-0002") #echo-0002:不满足游戏开始的条件
             if command_head == "ls":#ls-file查询已经读入存档信息
                 if command_list[1] == "file":
                     print("file_name-",file_name)
-                elif command_list[1] =="user":
-                    print("user_name-",user_name)
-                elif command_list[1] =="company":
-                    print("company_name-",company_name)
                 else:
                     print("echo-0003") #echo-0003:游戏尚未开始，指令无法生效
             if command_head == "change":#change指令用于修改user_name和company_name，格式分别是change-user-newmessage，change-company-newmessage
